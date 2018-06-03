@@ -1,5 +1,7 @@
 <?php
-public function show_something()
+const TESTCONSTANTA='asd';
+
+function show_something()
 {
     return 'SOMETHING';
 }
