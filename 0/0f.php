@@ -1,5 +1,5 @@
 <?php
-const TESTCONSTANTA='asd';
+const TEST_CONSTANTA = 'asd';
 
 function show_something()
 {
