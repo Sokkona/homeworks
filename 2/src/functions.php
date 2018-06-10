@@ -6,7 +6,7 @@
 function task1($str, $flag = false) {
 	
 	$k = count ($str); 
-	for ($i=0;$i<$k;$i++) echo "<p> $str[$i]", PHP_EOL;
+	for ($i = 0;$i < $k; $i++) echo "<p> $str[$i]", PHP_EOL;
 	
 	if ($flag) {
 		$un_str = '<p>'. implode ('',$str);
@@ -36,25 +36,25 @@ function task2 () {
 		switch ($param[0]) {
 			case ('+'): {
 				$res = 0;
-				for ($i = 1; $i < $k; $i++) $res+ = $param[$i];
+				for ($i = 1; $i < $k; $i++) $res+= $param[$i];
 				return ($res);
 				break;
 			}
 			case ('-'): {
 				$res = $param[1];
-				for ($i = 2; $i < $k; $i++) $res- = $param[$i];
+				for ($i = 2; $i < $k; $i++) $res-= $param[$i];
 				return ($res);
 				break;
 			}
 			case ('*'): {
 				$res = 1;
-				for ($i = 1;$i < $k; $i++) $res* = $param[$i];
+				for ($i = 1;$i < $k; $i++) $res*= $param[$i];
 				return ($res);
 				break;
 			}
 			case ('/'): {
 				$res = $param[1];
-				for ($i = 2; $i < $k; $i++) $res/ = $param[$i];
+				for ($i = 2; $i < $k; $i++) $res/= $param[$i];
 				return ($res);
 				break;
 			}
@@ -75,11 +75,9 @@ function task3 ($a,$b) {
 	function sign ($s) {
 		if ($s < 0) {
 			return -1;
-		}
-		elseif ($s === 0) {
+		}	elseif ($s === 0) {
 			return 0;
-		}
-		else return 1;
+		}	else return 1;
 	}
 	
 	if (is_int($a) and is_int($b)) {
@@ -99,6 +97,17 @@ function task3 ($a,$b) {
 		echo '</table>';
 	}
 	else echo 'вводимые числа должны быть целыми', PHP_EOL;
+}
+
+// task6. Принимает имя файла и открывает его только для чтения.
+// выводит содержимое файла на экран.
+
+
+function task6($file_name) {
+    $handle = fopen($file_name, "r");
+    echo '<p>';
+    readfile('test.txt');
+    fclose($handle);
 }
 
 ?>
