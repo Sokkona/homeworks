@@ -1,31 +1,31 @@
 <?php
 
-$bmw = array (
+$bmw = [
     'model' => 'X5',
     'speed' => 120,
     'doors' => 5,
     'year' => "2015" 
-);
+];
 
-$toyota = array (
+$toyota = [
     'model' => 'Camry',
     'speed' => 130,
     'doors' => 5,
     'year' => "2013" 
-);
+];
 
-$opel = array (
+$opel = [
     'model' => 'vectra',
     'speed' => 110,
     'doors' => 3,
     'year' => "2009" 
-);
+];
 
-$car = array (
+$car = [
     'bmw' => $bmw,
     'toyota' => $toyota,
     'opel' => $opel
-);
+];
 
 echo 'CAR bmw', PHP_EOL;
 echo "$bmw[model]  $bmw[speed]  $bmw[doors]  $bmw[year]", PHP_EOL;

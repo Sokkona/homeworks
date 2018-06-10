@@ -1,6 +1,6 @@
 <?php
 
-$day=0;
+$day = 0;
 
 switch ($day) {
     case 1:
