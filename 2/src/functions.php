@@ -5,9 +5,10 @@
 
 function task1($str, $flag = false)
 {
-
     $k = count($str);
-    for ($i = 0; $i < $k; $i++) echo "<p> $str[$i]", PHP_EOL;
+    for ($i = 0; $i < $k; $i++) {
+        echo "<p> $str[$i]", PHP_EOL;
+    }
 
     if ($flag) {
         $un_str = '<p>' . implode('', $str);
@@ -27,48 +28,52 @@ function task2()
     $k = func_num_args();
 
     // $numr  -  флаг, принимает false если хоть один из переданных параметров, кроме первого строкового,
-    //	не является числом либо строкой, содержащей число
+    // не является числом либо строкой, содержащей число
 
     $numr = true;
     for ($i = 1; $i < $k; $i++) {
-        if (!is_numeric($param[$i])) $numr = false;
+        if (!is_numeric($param[$i])) {
+            $numr = false;
+        }
     }
 
     if ($numr) {
         switch ($param[0]) {
-            case ('+'):
-                {
-                    $res = 0;
-                    for ($i = 1; $i < $k; $i++) $res += $param[$i];
-                    return ($res);
-                    break;
+            case '+':
+                $res = 0;
+                for ($i = 1; $i < $k; $i++) {
+                    $res += $param[$i];
                 }
-            case ('-'):
-                {
-                    $res = $param[1];
-                    for ($i = 2; $i < $k; $i++) $res -= $param[$i];
-                    return ($res);
-                    break;
+                return ($res);
+                break;
+            case '-':
+                $res = $param[1];
+                for ($i = 2; $i < $k; $i++) {
+                    $res -= $param[$i];
                 }
-            case ('*'):
-                {
-                    $res = 1;
-                    for ($i = 1; $i < $k; $i++) $res *= $param[$i];
-                    return ($res);
-                    break;
+                return ($res);
+                break;
+            case '*':
+                $res = 1;
+                for ($i = 1; $i < $k; $i++) {
+                    $res *= $param[$i];
                 }
-            case ('/'):
-                {
-                    $res = $param[1];
-                    for ($i = 2; $i < $k; $i++) $res /= $param[$i];
-                    return ($res);
-                    break;
+                return ($res);
+                break;
+            case '/':
+                $res = $param[1];
+                for ($i = 2; $i < $k; $i++) {
+                    $res /= $param[$i];
                 }
+                return ($res);
+                break;
             default:
-                echo 'Первым аргументом обязательно должна быть строка, обозначающая арифметическое действие, которое необходимо выполнить со всеми передаваемыми аргументами', PHP_EOL;
+                echo 'Первым аргументом обязательно должна быть строка, обозначающая арифметическое действие,';
+                echo 'которое необходимо выполнить со всеми передаваемыми аргументами', PHP_EOL;
         }
-
-    } else echo 'аргументы должны быть целыми или вещественными числами', PHP_EOL;
+    } else {
+        echo 'аргументы должны быть целыми или вещественными числами', PHP_EOL;
+    }
 }
 
 
@@ -85,15 +90,20 @@ function task3($a, $b)
             return -1;
         } elseif ($s === 0) {
             return 0;
-        } else return 1;
+        } else {
+            return 1;
+        }
     }
 
     if (is_int($a) and is_int($b)) {
-
         echo "<table border='3'>";
         $sgn = sign($a) * sign($b);
-        if ($a === 0) $a = 1;
-        if ($b === 0) $b = 1;
+        if ($a === 0) {
+            $a = 1;
+        }
+        if ($b === 0) {
+            $b = 1;
+        }
 
         for ($i = 1; $i <= abs($a); $i++) {
             echo '<tr>';
@@ -103,7 +113,9 @@ function task3($a, $b)
             echo '</tr>';
         }
         echo '</table>';
-    } else echo 'вводимые числа должны быть целыми', PHP_EOL;
+    } else {
+        echo 'вводимые числа должны быть целыми', PHP_EOL;
+    }
 }
 
 // task6. Принимает имя файла и открывает его только для чтения.
@@ -117,5 +129,3 @@ function task6($file_name)
     readfile('test.txt');
     fclose($handle);
 }
-
-?>
